@@ -1,0 +1,666 @@
+.home-page {
+
+    .container {
+        position: relative;
+    }
+
+    .main {
+        margin-bottom: 81px;
+        /* La altura del footer */
+    }
+
+
+
+}
+
+
+
+.column-content {
+    position: relative;
+    
+    background-color: white;
+    flex-direction: column;
+
+    @media screen and (min-width:$desktop) {
+        
+        flex-direction: row;
+        padding: 10px;
+        background-color: white;
+
+    }
+
+}
+
+.title-text {
+
+    width: 100%;
+    padding-top: 50px;
+
+    h1 {
+
+        flex-direction: row;
+        font-size: 20px;
+        width: auto;
+        font-family: $font-lato;
+        color: gray;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-align: center;
+        
+
+
+
+        @media screen and (min-width:$desktop) {
+            padding-left: 10px;
+            flex-direction: row;
+            font-size: 40px;
+            font-family: $font-lato;
+            color: gray;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            text-align: center;
+
+            
+
+        }
+
+
+
+    }
+}
+
+
+.row-content {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding-bottom: 100px;
+    padding-left: 0px;
+    flex-direction: column;
+
+    @media screen and (min-width: $desktop){
+        /*
+        flex-direction: row;
+        display: flex;
+    align-items: center;
+    background-color: white;
+   padding-top: 50px;
+    }
+*/   display: flex;
+    align-items: center; }
+
+    .images {
+        padding-top: 50px;
+
+        position: relative;
+
+        img {
+            
+            
+            opacity: 0; // Inicialmente, oculta las imágenes
+            transition: bottom 0.5s ease, opacity 0.5s ease; // Agrega una transición suave
+
+            &:nth-child(2) {
+                left: 100px; // Ajusta la posición de la imagen de la izquierda para superponerla al medio
+            }
+
+            &:nth-child(3) {
+                right: -500px; // Ajusta la posición de la imagen de la derecha para superponerla al medio
+            }
+
+            &.show {
+                bottom: 0; // Muestra las imágenes desplazándolas hacia arriba
+                opacity: 1; // Hace que las imágenes sean visibles
+            }
+        }
+    }
+
+    #tablet {
+        display: none;
+        @media screen and (min-width:$desktop){
+           display: inline;
+            
+        }
+    }
+
+    #laptop {
+        width: 100%;
+        @media screen and (min-width: $desktop){
+        display: inline;
+        width: 65%;
+    }
+        
+
+    }
+
+    #mobile {
+        display: none;
+        @media screen and (min-width:$desktop){
+           display: inline;
+            
+        }
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(100px); // Desplaza las imágenes hacia abajo al inicio de la animación
+        opacity: 0; // Hace que las imágenes sean invisibles al inicio de la animación
+    }
+
+    100% {
+        transform: translateY(0); // Desplaza las imágenes a su posición original al final de la animación
+        opacity: 1; // Hace que las imágenes sean visibles al final de la animación
+    }
+}
+
+.row-content .images img:nth-child(1) {
+    animation: slideIn 0.5s ease forwards 0.3s; // Aplica la animación a la primera imagen con un ligero retraso
+}
+
+.row-content .images img:nth-child(2) {
+    animation: slideIn 0.5s ease forwards 0.5s; // Aplica la animación a la segunda imagen con un retraso mayor
+}
+
+.row-content .images img:nth-child(3) {
+    animation: slideIn 0.5s ease forwards 0.7s; // Aplica la animación a la tercera imagen con el mayor retraso
+}
+
+
+
+
+#home{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.subtitle-text {
+
+    margin-left: 50px;position: relative;
+    color: $color-paragraph;
+
+    @media screen and (min-width){
+    position: relative;
+    
+    }
+    
+
+    h2 {
+        font-size: 20px;
+        flex-direction: column;
+        width: 40%;
+        text-align: left;
+        color: #06BC9B;
+
+        @media screen and (min-width:$desktop){
+        font-size: 40px;
+        flex-direction: row;
+        width: 40%;
+        text-align: left;
+        color: #06BC9B;
+        }
+
+    }
+}
+
+.myBtn {
+    background-color: #06BC9B;
+    color: white;
+    font-size: 20px; 
+    border-radius: 5px;
+    cursor: pointer;
+    
+
+    &::after {
+        content: '';
+        /* Agregar contenido al pseudo-elemento */
+        display: inline-block;
+        /* Mostrar el pseudo-elemento como un bloque */
+        width: 0;
+        height: 0;
+        border-top: 8px solid transparent;
+        /* Crear la parte superior del triángulo */
+        border-bottom: 8px solid transparent;
+        /* Crear la parte inferior del triángulo */
+        border-left: 8px solid white;
+        /* Crear la parte izquierda del triángulo */
+        margin-left: 10px;
+        /* Espacio entre el botón y la flecha */
+    }
+
+
+
+    @media screen and (min-width:$desktop){
+
+    color: white;
+    font-size: 20px;
+    padding: 10px 20px; 
+    border-radius: 5px;
+    background-color: #06BC9B;
+    cursor: pointer;
+    
+
+    &::after {
+        content: '';
+        /* Agregar contenido al pseudo-elemento */
+        display: inline-block;
+        /* Mostrar el pseudo-elemento como un bloque */
+        width: 0;
+        height: 0;
+        border-top: 8px solid transparent;
+        /* Crear la parte superior del triángulo */
+        border-bottom: 8px solid transparent;
+        /* Crear la parte inferior del triángulo */
+        border-left: 8px solid white;
+        /* Crear la parte izquierda del  */
+        margin-left: 10px;
+        /* Espacio entre el botón y la flecha */
+    }
+}
+
+}
+
+
+
+
+#content {
+    display: flex;
+    flex-direction: column;
+
+
+    @media screen and (min-width:$desktop) {
+        flex-direction: row;
+        display: flex;
+        justify-content: space-around;
+        margin: 20px;
+    }
+
+
+}
+
+.aboutMe {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 100px;
+    margin-left: none;
+    
+
+
+    @media screen and (min-width:$desktop){
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 100px;
+    border-top: 1px solid rgb(247, 247, 247);
+    border-bottom: 1px solid rgb(247, 247, 247);
+    
+    }
+}
+
+.profilePicture {
+    img {
+        padding-top: 5px;
+        width: 20%;
+        border-radius: 10px;
+        display: block;
+        margin: 0 auto;
+    }
+
+    @media screen and (min-width:$desktop){
+    img {
+        width: 15%;
+        border-radius: 10px;
+        
+        margin-top: 20px;
+    }
+}
+}
+
+.aboutText {
+    font-size: 15px;
+    text-align: justify;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 15px;
+    color: #525d68;
+
+    @media screen and (min-width:$desktop){
+    color: #525d68;
+    font-size: 15px;
+    text-align: justify;
+    
+    padding-top: 15px;
+
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+}
+}
+
+.boxes {
+    margin-top: 20px;
+    flex-direction: column;
+    justify-content: center; /* Centrar verticalmente */
+    align-items: center; 
+    margin-bottom: 20px;
+    
+
+    @media screen and (min-width: $desktop){
+        display: flex;
+        flex-direction: row;
+        width: 70%;
+        
+        margin-bottom: 20px;
+        
+    }
+
+    .about-img {
+        width: 25%;
+        border-radius: 50%;
+        display: block;
+        margin: 0 auto;
+        padding-top: 5px;
+        
+
+        @media screen and (min-width:$desktop){
+            width: 25%;
+            display: block;
+            margin: 0 auto;
+            
+        }
+    }
+
+    .skills-img {
+        width: 25%;
+        border-radius: 50%;
+        display: block;
+        margin: 0 auto;
+        padding-top: 5px;
+        
+
+        @media screen and (min-width:$desktop){
+            width: 25%;
+            display: block;
+            margin: 0 auto;
+
+        }
+
+    }
+
+   
+
+    .columntext1 {
+        margin: 0 10px 10px 10px;
+
+        @media screen and (min-width:$desktop){
+            margin: 0 10px 10px 10px;
+            
+        }
+    }
+
+ 
+
+
+    .skills-box {
+       display: flex;
+        flex-direction: column;
+        background-color: rgb(247, 247, 247);
+        border-radius: 5px;
+        margin-bottom: 20px;
+       
+
+        @media screen and (min-width: $desktop){
+        background-color: rgb(247, 247, 247);
+        border-radius: 5px;
+        width: 339px;
+        height: 385px;
+        margin-right: 100px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin-bottom: 0;
+        }
+
+        h3 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #06BC9B;
+
+        }
+
+        li{
+            color: #525d68;
+        }
+
+
+    }
+
+
+    .experience-box {
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(247, 247, 247);
+        border-radius: 5px;
+        padding-bottom: 10px;
+        
+
+        @media screen and (min-width: $desktop){
+        width: 339px;
+        height: 385px;
+        background-color: rgb(247, 247, 247);
+        border-radius: 5px;
+        margin-right: 100px;
+        padding-bottom: 20px;
+        
+        
+        }
+        
+      
+
+        h3 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #06BC9B;
+        }
+
+        p {
+            text-align: left;
+            color: #525d68;
+        }
+
+
+        @media screen and (min-width){
+        width: 339px;
+        height: 385px;
+        background-color: rgb(226, 215, 215);
+        border-radius: 5px;
+        
+        margin-right: 200px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+        h3 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        p {
+            text-align: left;
+        }
+    }
+    }
+
+    .columntext2{
+        margin: 0 10px 10px 10px;
+
+        @media screen and (min-width:$desktop){
+            margin: 0 10px 10px 10px;
+            
+        }
+    }
+
+    .contact-box {
+        margin-top: 20px;
+        background-color: rgb(247, 247, 247);
+        
+        display: flex;
+        flex-direction: column;
+        border-radius: 5px;
+
+
+        @media screen and (min-width:$desktop){
+        width: 339px;
+        height: 385px;
+        background-color: rgb(247, 247, 247);
+        min-height: 50%; 
+        display: flex;
+        flex-direction: column;
+        border-radius: 5px;
+        margin-top: 0;
+        padding-bottom: 20px;
+    }
+
+        h3 {
+            text-align: center;
+            margin-left: none;
+            margin-top: 20px;
+            color: #06BC9B;
+        }
+
+        p {
+            text-align: left;
+            margin-left: 90px;
+
+        }
+
+        img{
+            margin-top: 10px;
+        }
+    }
+}
+
+
+.myBtn1 {
+    
+    color: white;
+    font-size: 16px;
+    padding: 0;
+    border-radius: 5px;  
+    width: 120px;
+    height: 30px;
+    display: block;
+    margin: 0 auto;
+    text-decoration: none;
+    background-color: #06BC9B;
+
+    @media screen and (min-width: $desktop){
+    display: flex;
+    width: 120px;
+    height: 30px;
+    display: block;
+    margin: 0 auto;
+    background-color: #06BC9B;
+    text-decoration: none;
+    
+    
+    }
+    
+    
+    
+
+    &::after {
+        content: '';
+        /* Agregar contenido al pseudo-elemento */
+        display: inline-block;
+        /* Mostrar el pseudo-elemento como un bloque */
+        width: 0;
+        height: 0;
+        border-top: 8px solid transparent;
+        /* Crear la parte superior del triángulo */
+        border-bottom: 8px solid transparent;
+        /* Crear la parte inferior del triángulo */
+        border-left: 8px solid white;
+        /* Crear la parte izquierda del triángulo */
+        margin-left: 10px;
+        /* Espacio entre el botón y la flecha */
+    }
+
+}
+
+
+
+
+
+// Estilo general para el footer
+
+// Variables
+$form-width: 400px;
+$input-padding: 8px;
+$input-margin-bottom: 10px;
+$input-border: 1px solid #ccc;
+$input-border-radius: 4px;
+$button-bg-color: #4CAF50;
+$button-hover-color: #45a049;
+
+// Estilos
+.form1 {
+    /* Asegúrate de que el formulario ocupe todo el espacio disponible en el div3 */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Para centrar el contenido verticalmente */
+    background-color: transparent;
+    border: none;
+    border-radius: 0px;
+    box-shadow: none;
+    margin-top: -50px;
+    padding: none;
+    
+
+    
+}
+
+label {
+    display: flex;
+    margin-bottom: 0px;
+    color: #06BC9B;
+    
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 200px;
+    height: 30px;
+    border: $input-border;
+    border-radius: $input-border-radius;
+    
+    
+    
+}
+
+textarea {
+    width: 200px;
+    height: 30px;
+}
+
+input[type="submit"] {
+    background-color: #06BC9B;
+    color: white;
+    padding: none;
+    border: none;
+    border-radius: $input-border-radius;
+    cursor: pointer;
+    margin-left: 0;
+    margin-top: 10px;
+    
+
+    &:hover {
+        background-color: $button-hover-color;
+    }
+}
+
+.myBtn2{
+    font-size: 16px;
+}
