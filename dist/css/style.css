@@ -10,6 +10,17 @@
   /* La altura del footer */
 }
 
+/* Remove tap highlight color */
+a, button, input, textarea, label {
+  -webkit-tap-highlight-color: transparent; /* For iOS Safari */
+  tap-highlight-color: transparent; /* Standard syntax, if supported */
+}
+
+/* Remove focus outline */
+a:focus, button:focus, input:focus, textarea:focus {
+  outline: none; /* Be cautious with accessibility implications */
+}
+
 .column-content {
   position: relative;
   background-color: white;
@@ -505,7 +516,7 @@
 }
 
 label {
-  display: flex;
+  display: fixed;
   margin-bottom: 0px;
   color: #06BC9B;
 }
